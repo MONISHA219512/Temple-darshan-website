@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Temple</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Temple Darshan</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="temples.php">Temples</a>
+        <a href="add_temple.html">Add Temple</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Add a New Temple</h2>
+    <form action="add_temple.php" method="POST">
+        <label>Temple Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Location:</label><br>
+        <input type="text" name="location" required><br><br>
+
+        <label>Deity:</label><br>
+        <input type="text" name="deity" required><br><br>
+
+        <label>Description:</label><br>
+        <textarea name="description" rows="4" required></textarea><br><br>
+
+        <button type="submit">Add Temple</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 Temple Darshan</p>
+</footer>
+</body>
+</html>

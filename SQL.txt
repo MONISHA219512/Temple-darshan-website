@@ -1,0 +1,31 @@
+-- Step 1: Create the Database
+CREATE DATABASE IF NOT EXISTS temple_darshan; 
+USE temple_darshan;
+
+-- Step 2: Create 'temples' table 
+CREATE TABLE temples (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+name VARCHAR(255) NOT NULL,
+location VARCHAR(255) NOT NULL
+);
+
+-- Step 3: Create 'bookings' table 
+CREATE TABLE bookings (
+id INT AUTO_INCREMENT PRIMARY KEY,
+temple_id INT NOT NULL,
+name VARCHAR(255) NOT NULL, 
+email VARCHAR(255) NOT NULL, 
+date DATE NOT NULL,
+time_slot VARCHAR(100) NOT NULL,
+FOREIGN KEY (temple_id) REFERENCES temples(id) ON DELETE CASCADE
+);
+
+-- Step 4: Create 'users' table (for login/registration) 
+CREATE TABLE users (
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL
+);
+-- Step 5: Insert sample temples (Optional demo data) 
+INSERT INTO temples (name, location) VALUES ('Meenakshi Amman Temple', 'Madurai'), ('Brihadeeswara Temple', 'Thanjavur'),
+('Kashi Vishwanath Temple', 'Varanasi'), ('Somnath Temple', 'Gujarat'), ('Jagannath Temple', 'Puri');
